@@ -77,11 +77,11 @@ years=["%Y-%m-%d-%H-%m-%S"],
 )
 
 # configure visual properties on a plot's title attribute
-f.title.text = "Streaming financial data - AUTHOR: Dr Dinald O. Besong"
+f.title.text = "Streaming financial data - AUTHOR: Dr Donald O. Besong"
 f.title.align = "right"
 #f.title.text_color = "orange"
 #f.title.text_font_size = "25px"
-f.title.background_fill_color = "green"
+f.title.background_fill_color = "yellow"
 
 select.on_change("value",update_intermediate)
 
