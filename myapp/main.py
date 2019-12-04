@@ -1,7 +1,7 @@
 #AUTHOR: Donald O. Besong
 
 from bokeh.io import curdoc
-from bokeh.models import ColumnDataSource, DatetimeTickFormatter, Select
+from bokeh.models import ColumnDataSource, DatetimeTickFormatter, Select, Label
 from bokeh.layouts import layout
 from bokeh.plotting import figure
 import requests
@@ -14,7 +14,7 @@ from pytz import timezone
 f=figure(x_axis_type='datetime')
 
 #create webscraping function
-bcsite = "http://bitcoincharts.com/markets/btcnCNY.html"
+bcsite = "http://bitcoincharts.com/markets/btcnCNY.html" #use https://www.bitmex.com/app/trade/XBTUSD instead, s=value_raw[3], s.text
 bttrsite = "http://bitcoincharts.com/markets/btctradeCNY.html"
 def extract_value(site=bcsite):
     r=requests.get(site,headers={'User-Agent':'Mozilla/5.0'})
@@ -75,6 +75,14 @@ days=["%Y-%m-%d-%H-%m-%S"],
 months=["%Y-%m-%d-%H-%m-%S"],
 years=["%Y-%m-%d-%H-%m-%S"],
 )
+
+# configure visual properties on a plot's title attribute
+f.title.text = "Streaming financial data - AUTHOR: Dr Dinald O. Besong"
+f.title.align = "right"
+#f.title.text_color = "orange"
+#f.title.text_font_size = "25px"
+f.title.background_fill_color = "green"
+
 select.on_change("value",update_intermediate)
 
 #add figure to curdoc and configure callback
