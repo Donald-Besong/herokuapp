@@ -14,7 +14,7 @@ from pytz import timezone
 f=figure(x_axis_type='datetime')
 
 #create webscraping function
-bcsite = "http://bitcoincharts.com/markets/btcnCNY.html" #use https://www.bitmex.com/app/trade/XBTUSD instead, s=value_raw[3], s.text
+bcsite = "http://bitcoincharts.com/markets/btcnCNY.html" # I will later use https://www.bitmex.com/app/trade/XBTUSD instead, s=value_raw[3], s.text
 bttrsite = "http://bitcoincharts.com/markets/btctradeCNY.html"
 def extract_value(site=bcsite):
     r=requests.get(site,headers={'User-Agent':'Mozilla/5.0'})
